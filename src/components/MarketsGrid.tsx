@@ -8,6 +8,7 @@ import oilGas from "@/assets/mercado-oil-gas.jpg";
 import dataCenter from "@/assets/mercado-data-center.jpg";
 import industrial from "@/assets/mercado-industrial.jpg";
 import energy from "@/assets/mercado-energy.webp";
+import epc from "@/assets/mercado-epc.webp";
 
 const markets = [
   {
@@ -38,7 +39,7 @@ const markets = [
     icon: Cog,
     title: "EPC Projects",
     desc: "Engineering, procurement and construction for critical projects.",
-    img: suportesTubulacao,
+    img: epc,
   },
 ];
 
