@@ -1,3 +1,5 @@
+import aboutEngenheiro from "@/assets/about-engenheiro.png";
+
 export function AboutSection() {
   return (
     <section id="about-preview" className="relative bg-background py-28 md:py-36">
@@ -23,7 +25,7 @@ export function AboutSection() {
 
         <div className="mt-16 overflow-hidden rounded-2xl shadow-soft">
           <img
-            src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=1800&q=75"
+            src={aboutEngenheiro}
             alt="Engenheiro Nexcore Brasil em planta industrial"
             loading="lazy"
             className="h-[420px] w-full object-cover md:h-[560px]"
