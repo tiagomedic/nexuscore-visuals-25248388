@@ -131,12 +131,13 @@ export function SolutionsTabs() {
           </div>
           <div className="grid grid-cols-2 gap-1 bg-secondary p-1">
             {sol.images.map((src, i) => (
-              <div key={i} className="overflow-hidden bg-white">
+              <div key={i} className="flex items-center justify-center overflow-hidden bg-white p-6">
                 <img
                   src={src}
                   alt={`${sol.title} ${i + 1}`}
                   loading="lazy"
-                  className="h-full w-full object-cover transition-transform duration-700 hover:scale-105"
+                  className="h-full w-full object-contain transition-transform duration-700 hover:scale-105"
+                  style={{ transform: "scale(0.5)" }}
                 />
               </div>
             ))}
