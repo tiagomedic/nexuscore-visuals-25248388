@@ -5,13 +5,14 @@ import suportesTubulacao from "@/assets/produto-suportes-tubulacao.jpg";
 import selagemBeele from "@/assets/produto-selagem-beele.jpg";
 import prensaCabo from "@/assets/produto-prensa-cabo.jpg";
 import oilGas from "@/assets/mercado-oil-gas.jpg";
+import dataCenter from "@/assets/mercado-data-center.jpg";
 
 const markets = [
   {
     icon: Database,
     title: "Data Centers",
     desc: "Mission-critical facilities requiring maximum uptime and protection.",
-    img: mctWallmax,
+    img: dataCenter,
   },
   {
     icon: Zap,
