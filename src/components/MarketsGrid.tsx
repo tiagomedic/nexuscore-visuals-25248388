@@ -1,35 +1,40 @@
 import { Database, Zap, Droplets, Factory, Cog } from "lucide-react";
+import heroIndustrial from "@/assets/hero-industrial.jpg";
+import mctWallmax from "@/assets/produto-mct-wallmax.jpg";
+import suportesTubulacao from "@/assets/produto-suportes-tubulacao.jpg";
+import selagemBeele from "@/assets/produto-selagem-beele.jpg";
+import prensaCabo from "@/assets/produto-prensa-cabo.jpg";
 
 const markets = [
   {
     icon: Database,
     title: "Data Centers",
     desc: "Mission-critical facilities requiring maximum uptime and protection.",
-    img: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1200&q=70",
+    img: mctWallmax,
   },
   {
     icon: Zap,
     title: "Energy",
     desc: "Power generation and distribution infrastructure at industrial scale.",
-    img: "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&w=1200&q=70",
+    img: prensaCabo,
   },
   {
     icon: Droplets,
     title: "Oil & Gas",
     desc: "Offshore platforms and refineries with zero-tolerance for failure.",
-    img: "https://images.unsplash.com/photo-1518709268805-4e9042af2176?auto=format&fit=crop&w=1200&q=70",
+    img: heroIndustrial,
   },
   {
     icon: Factory,
     title: "Industrial Infrastructure",
     desc: "Heavy industry and complex manufacturing environments.",
-    img: "https://images.unsplash.com/photo-1565043666747-69f6646db940?auto=format&fit=crop&w=1200&q=70",
+    img: selagemBeele,
   },
   {
     icon: Cog,
     title: "EPC Projects",
     desc: "Engineering, procurement and construction for critical projects.",
-    img: "https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=1200&q=70",
+    img: suportesTubulacao,
   },
 ];
 
