@@ -4,6 +4,7 @@ import mctWallmax from "@/assets/produto-mct-wallmax.jpg";
 import suportesTubulacao from "@/assets/produto-suportes-tubulacao.jpg";
 import selagemBeele from "@/assets/produto-selagem-beele.jpg";
 import prensaCabo from "@/assets/produto-prensa-cabo.jpg";
+import oilGas from "@/assets/mercado-oil-gas.jpg";
 
 const markets = [
   {
@@ -22,7 +23,7 @@ const markets = [
     icon: Droplets,
     title: "Oil & Gas",
     desc: "Offshore platforms and refineries with zero-tolerance for failure.",
-    img: heroIndustrial,
+    img: oilGas,
   },
   {
     icon: Factory,
