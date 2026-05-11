@@ -6,6 +6,7 @@ import selagemBeele from "@/assets/produto-selagem-beele.jpg";
 import prensaCabo from "@/assets/produto-prensa-cabo.jpg";
 import oilGas from "@/assets/mercado-oil-gas.jpg";
 import dataCenter from "@/assets/mercado-data-center.jpg";
+import industrial from "@/assets/mercado-industrial.jpg";
 
 const markets = [
   {
@@ -30,7 +31,7 @@ const markets = [
     icon: Factory,
     title: "Industrial Infrastructure",
     desc: "Heavy industry and complex manufacturing environments.",
-    img: selagemBeele,
+    img: industrial,
   },
   {
     icon: Cog,
