@@ -1,5 +1,14 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import prensaCabo from "@/assets/produto-prensa-cabo.jpg";
+import prensaCabo2 from "@/assets/produto-prensa-cabo-2.jpg";
+import adaptadores from "@/assets/produto-adaptadores.jpg";
+import cableCleat from "@/assets/produto-cable-cleat.jpg";
+import mctWallmax from "@/assets/produto-mct-wallmax.jpg";
+import mctModulo from "@/assets/produto-mct-modulo.jpg";
+import mctCircular from "@/assets/produto-mct-circular.jpg";
+import selagemBeele from "@/assets/produto-selagem-beele.jpg";
+import suportesTubulacao from "@/assets/produto-suportes-tubulacao.jpg";
 
 interface Solution {
   id: string;
@@ -12,86 +21,63 @@ interface Solution {
 const solutions: Solution[] = [
   {
     id: "electrical",
-    title: "Electrical Connectivity",
+    title: "Prensa-Cabos Ex (CMP)",
     intro:
-      "Soluções de conectividade elétrica para ambientes críticos, desde plataformas offshore até data centers de missão crítica.",
+      "Prensa-cabos para cabos armados, não armados e conduítes em áreas classificadas, com proteções 'Ex db', 'Ex eb', 'Ex nr' e 'Ex ta'. Inclui modelos com barreira em epóxi/resina conforme ABNT NBR IEC 60079-14.",
     bullets: [
-      { label: "Conectores industriais", text: "Alta performance em ambientes severos." },
-      { label: "Sistemas modulares", text: "Flexibilidade na especificação e instalação." },
-      { label: "Certificações globais", text: "Atende normas ATEX, IECEx e UL." },
+      { label: "Materiais nobres", text: "Aço inoxidável 316L, latão niquelado e alumínio." },
+      { label: "Anti-Coldflow", text: "Tecnologia de prevenção ao coldflow e proteção IP66/W, IP67 e IP68." },
+      { label: "Roscas e certificações", text: "Roscas métricas e NPT. Certificados Inmetro, ATEX, IECEx, UL e CSA." },
     ],
-    images: [
-      "https://images.unsplash.com/photo-1620283085439-39620a1e21c4?auto=format&fit=crop&w=900&q=70",
-      "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=900&q=70",
-      "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&w=900&q=70",
-      "https://images.unsplash.com/photo-1574170609686-77b9d5b6f5e1?auto=format&fit=crop&w=900&q=70",
-    ],
+    images: [prensaCabo, prensaCabo2, adaptadores, cableCleat],
   },
   {
     id: "sealing",
-    title: "Sealing Solutions",
+    title: "MCT Wallmax",
     intro:
-      "Multi Cable Transit Solutions desenvolvidas para garantir vedação confiável e segura de cabos e tubulações em ambientes críticos.",
+      "Multi Cable Transit (MCT): vedações modulares para cabos e tubos, com proteção contra fogo, estanqueidade de água e gás, e barreira contra parasitas (ratos e insetos).",
     bullets: [
-      { label: "Sistemas modulares", text: "Proteção contra ingresso de poeira, água, fogo e agentes ambientais." },
-      { label: "Alto nível de segurança", text: "Ampla gama de soluções adaptáveis a diferentes aplicações." },
-      { label: "Praticidade", text: "Facilidade de instalação e manutenção, reduzindo tempo de intervenção." },
+      { label: "Sistema modular", text: "Proteção contra fogo, água, gás e poeira em uma única solução." },
+      { label: "Áreas classificadas", text: "Proteções 'Ex' para uso em ambientes industriais e offshore." },
+      { label: "Manutenção fácil", text: "Inserção e remoção de cabos sem refazer toda a vedação." },
     ],
-    images: [
-      "https://images.unsplash.com/photo-1581093588401-fbb62a02f120?auto=format&fit=crop&w=900&q=70",
-      "https://images.unsplash.com/photo-1581092335397-9583eb92d232?auto=format&fit=crop&w=900&q=70",
-      "https://images.unsplash.com/photo-1581093588401-fbb62a02f120?auto=format&fit=crop&w=900&q=70",
-      "https://images.unsplash.com/photo-1581092918484-8313ee1b9b4c?auto=format&fit=crop&w=900&q=70",
-    ],
+    images: [mctWallmax, mctModulo, mctCircular, selagemBeele],
   },
   {
     id: "watertight",
-    title: "Watertight Sealing Solutions",
+    title: "Selos UGA System-Technik",
     intro:
-      "Soluções de vedação para penetrações estruturais em edifícios, como furos de núcleo, garantindo desempenho watertight e gas-tight.",
+      "Selos para cabos e tubos lisos ou corrugados em aplicações subterrâneas e enterradas, garantindo estanqueidade total de água e gás.",
     bullets: [
-      { label: "Split solutions", text: "Para cabos ou tubulações já instalados, permitindo montagem após a instalação." },
-      { label: "Sistema versátil", text: "Veda uma ampla variedade de configurações de cabos e tubos." },
+      { label: "Subterrâneo & enterrado", text: "Especificado para passagens em paredes, lajes e dutos." },
+      { label: "Estanqueidade total", text: "Vedação confiável de água e gás em condições severas." },
+      { label: "Anti-parasitas", text: "Proteção contra ratos e insetos em pontos críticos." },
     ],
-    images: [
-      "https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=900&q=70",
-      "https://images.unsplash.com/photo-1581093588401-fbb62a02f120?auto=format&fit=crop&w=900&q=70",
-      "https://images.unsplash.com/photo-1620283085439-39620a1e21c4?auto=format&fit=crop&w=900&q=70",
-      "https://images.unsplash.com/photo-1565043666747-69f6646db940?auto=format&fit=crop&w=900&q=70",
-    ],
+    images: [selagemBeele, mctCircular, mctModulo, mctWallmax],
   },
   {
     id: "beele",
-    title: "Beele Sealing Technologies",
+    title: "Beele Safety Sealing",
     intro:
-      "Seja em construção naval, offshore, instalações industriais ou construção civil, os produtos e sistemas de primeira classe da Beele garantem segurança contra fogo e integridade watertight.",
+      "Soluções flexíveis e modeláveis para selagem de cabos e tubos, com instalação prática independente da geometria da transição. Para construção naval, offshore, indústria e construção civil.",
     bullets: [
-      { label: "Cable Transits", text: "Penetrações de cabos com vedação resistente ao fogo." },
-      { label: "Pipe Penetrations", text: "Soluções para tubulações sem componentes metálicos ou isolamento mineral." },
-      { label: "Gaskets / Insulation / Coating", text: "Eliminação de riscos de corrosão e degradação de desempenho." },
+      { label: "Instalação flexível", text: "Adapta-se a qualquer área de transição sem moldes complexos." },
+      { label: "Antichama & estanque", text: "Proteção contra fogo, água e gás em uma única aplicação." },
+      { label: "Anti-parasitas", text: "Barreira eficiente contra ratos e insetos." },
     ],
-    images: [
-      "https://images.unsplash.com/photo-1581093588401-fbb62a02f120?auto=format&fit=crop&w=900&q=70",
-      "https://images.unsplash.com/photo-1565043666747-69f6646db940?auto=format&fit=crop&w=900&q=70",
-      "https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=900&q=70",
-      "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&w=900&q=70",
-    ],
+    images: [selagemBeele, mctCircular, mctWallmax, mctModulo],
   },
   {
     id: "pipe",
-    title: "Pipe Support Technology",
-    intro: "Linha completa de Pipe Support Solutions para projetos de infraestrutura crítica.",
+    title: "Pipe Supports (Carpenter & Paterson)",
+    intro:
+      "Linha completa de suportes de tubulação para projetos de infraestrutura crítica: suportes de molas, snubbers hidráulicos e isolamentos térmicos.",
     bullets: [
-      { label: "Spring supports", text: "Snubbers, cold (cryogenic) e hot shoes." },
-      { label: "Ancillary equipment", text: "Hastes, conectores, fixações de tubo e de viga." },
-      { label: "PTFE", text: "Slide bearings e produtos de isolamento." },
+      { label: "Spring supports", text: "Suportes de carga variável e constante para tubulações dinâmicas." },
+      { label: "Snubbers hidráulicos", text: "Amortecedores axiais, transversais e multidirecionais." },
+      { label: "Hot Shoes", text: "Suportes com isolamentos térmicos para linhas de alta temperatura." },
     ],
-    images: [
-      "https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=900&q=70",
-      "https://images.unsplash.com/photo-1518709268805-4e9042af2176?auto=format&fit=crop&w=900&q=70",
-      "https://images.unsplash.com/photo-1565043666747-69f6646db940?auto=format&fit=crop&w=900&q=70",
-      "https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=900&q=70",
-    ],
+    images: [suportesTubulacao, adaptadores, cableCleat, prensaCabo],
   },
 ];
 
