@@ -7,6 +7,7 @@ import prensaCabo from "@/assets/produto-prensa-cabo.jpg";
 import oilGas from "@/assets/mercado-oil-gas.jpg";
 import dataCenter from "@/assets/mercado-data-center.jpg";
 import industrial from "@/assets/mercado-industrial.jpg";
+import energy from "@/assets/mercado-energy.webp";
 
 const markets = [
   {
@@ -19,7 +20,7 @@ const markets = [
     icon: Zap,
     title: "Energy",
     desc: "Power generation and distribution infrastructure at industrial scale.",
-    img: prensaCabo,
+    img: energy,
   },
   {
     icon: Droplets,
