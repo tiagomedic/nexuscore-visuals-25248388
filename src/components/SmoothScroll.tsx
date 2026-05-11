@@ -4,10 +4,16 @@ import Lenis from "lenis";
 export function SmoothScroll() {
   useEffect(() => {
     const lenis = new Lenis({
-      duration: 1.2,
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      lerp: 0.1,
       smoothWheel: true,
+      wheelMultiplier: 1,
+      touchMultiplier: 1.5,
+      anchors: true,
     });
+
+    // expose for debugging / external control
+    (window as unknown as { lenis?: Lenis }).lenis = lenis;
+    document.documentElement.classList.add("lenis", "lenis-smooth");
 
     let rafId: number;
     function raf(time: number) {
@@ -19,6 +25,7 @@ export function SmoothScroll() {
     return () => {
       cancelAnimationFrame(rafId);
       lenis.destroy();
+      document.documentElement.classList.remove("lenis", "lenis-smooth");
     };
   }, []);
 
