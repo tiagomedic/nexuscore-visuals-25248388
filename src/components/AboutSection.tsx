@@ -13,9 +13,8 @@ export function AboutSection() {
           where performance, safety, and reliability are <em className="font-serif-italic">non-negotiable.</em>
         </h2>
 
-        <div className="mt-12 grid gap-12 md:grid-cols-2">
-          <div />
-          <p className="text-base leading-relaxed text-muted-foreground md:text-lg">
+        <div className="mt-12">
+          <p className="max-w-5xl text-base leading-relaxed text-muted-foreground md:text-lg">
             Fornecemos e integramos soluções técnicas para projetos de Data Centers, Energia e Óleo &amp; Gás —
             atuando lado a lado com engenheiros e integradores desde a especificação inicial até a implementação final.
             Nosso papel vai além da distribuição: apoiamos a definição correta das soluções, ajudando a reduzir riscos,
