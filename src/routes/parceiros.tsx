@@ -1,6 +1,11 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { SectionHeading } from "@/components/SectionHeading";
 import { CTASection } from "@/components/CTASection";
+import partnerCmp from "@/assets/partner-cmp.png";
+import partnerWallmax from "@/assets/partner-wallmax.png";
+import partnerCarpenter from "@/assets/partner-carpenter.png";
+import partnerBeele from "@/assets/partner-beele.png";
+import partnerUga from "@/assets/partner-uga.png";
 
 export const Route = createFileRoute("/parceiros")({
   head: () => ({
@@ -19,12 +24,11 @@ export const Route = createFileRoute("/parceiros")({
 });
 
 const partners = [
-  { name: "Beele Engineering", focus: "Sealing technologies, fire & watertight" },
-  { name: "Roxtec", focus: "Multi cable transit systems" },
-  { name: "Anvil International", focus: "Pipe support technology" },
-  { name: "MCT Brattberg", focus: "Cable & pipe penetration sealing" },
-  { name: "PSA BV", focus: "Industrial sealing components" },
-  { name: "Hilti", focus: "Firestop & fastening" },
+  { name: "CMP", logo: partnerCmp },
+  { name: "Wallmax", logo: partnerWallmax },
+  { name: "Carpenter & Paterson", logo: partnerCarpenter },
+  { name: "Beele Safety Sealing Systems", logo: partnerBeele },
+  { name: "UGA Cable and Pipe Entries", logo: partnerUga },
 ];
 
 function PartnersPage() {
@@ -43,15 +47,15 @@ function PartnersPage() {
 
       <section className="bg-secondary py-24 md:py-32">
         <div className="mx-auto max-w-7xl px-6 lg:px-10">
-          <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+          <div className="grid grid-cols-2 items-center gap-8 md:grid-cols-3 lg:grid-cols-5 lg:gap-12">
             {partners.map((p) => (
-              <div key={p.name} className="group rounded-2xl bg-card p-8 shadow-soft transition-smooth hover:-translate-y-1 hover:shadow-glow">
-                <div className="flex h-16 w-16 items-center justify-center rounded-xl bg-deep text-2xl font-semibold text-cyan">
-                  {p.name.charAt(0)}
-                </div>
-                <h3 className="mt-6 text-xl font-medium text-primary">{p.name}</h3>
-                <p className="mt-2 text-sm text-muted-foreground">{p.focus}</p>
-                <div className="mt-6 h-px w-12 bg-cyan-soft transition-all group-hover:w-24" />
+              <div key={p.name} className="flex items-center justify-center">
+                <img
+                  src={p.logo}
+                  alt={p.name}
+                  loading="lazy"
+                  className="max-h-24 w-auto object-contain opacity-70 grayscale transition-smooth hover:opacity-100"
+                />
               </div>
             ))}
           </div>
