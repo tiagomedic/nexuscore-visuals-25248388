@@ -10,7 +10,7 @@ import electricalAccessories from "@/assets/electrical-accessories.jpg";
 import electricalGland2 from "@/assets/electrical-cable-gland-2.jpg";
 import mctWallmax from "@/assets/produto-mct-wallmax.jpg";
 import mctModulo from "@/assets/produto-mct-modulo.jpg";
-import mctCircular from "@/assets/produto-mct-circular.jpg";
+import mctCircular from "@/assets/produto-mct-circular-v2.png";
 import selagemBeele from "@/assets/produto-selagem-beele.jpg";
 import suportesTubulacao from "@/assets/produto-suportes-tubulacao.jpg";
 
