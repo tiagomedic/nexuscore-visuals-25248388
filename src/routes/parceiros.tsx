@@ -47,6 +47,9 @@ function PartnersPage() {
 
       <section className="bg-secondary py-24 md:py-32">
         <div className="mx-auto max-w-7xl px-6 lg:px-10">
+          <p className="mb-10 text-sm font-medium tracking-[0.2em] text-muted-foreground">
+            PARTNERS
+          </p>
           <div className="grid grid-cols-2 items-center gap-8 md:grid-cols-3 lg:grid-cols-5 lg:gap-12">
             {partners.map((p) => (
               <div key={p.name} className="flex items-center justify-center">
@@ -59,9 +62,6 @@ function PartnersPage() {
               </div>
             ))}
           </div>
-          <p className="mt-12 mx-[23px] my-[46px] px-0 py-0 text-sm font-medium tracking-[0.2em] text-muted-foreground">
-            PARTNERS
-          </p>
         </div>
       </section>
 
