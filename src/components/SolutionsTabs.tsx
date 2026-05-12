@@ -11,7 +11,7 @@ import electricalGland2 from "@/assets/electrical-cable-gland-2.jpg";
 import mctWallmax from "@/assets/produto-mct-wallmax.jpg";
 import mctModulo from "@/assets/produto-mct-modulo-v2.png";
 import mctCircular from "@/assets/produto-mct-circular-v2.png";
-import selagemBeele from "@/assets/produto-selagem-beele.jpg";
+import selagemBeele from "@/assets/produto-selagem-beele-v2.png";
 import suportesTubulacao from "@/assets/produto-suportes-tubulacao.jpg";
 
 interface Solution {
