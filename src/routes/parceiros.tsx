@@ -59,7 +59,7 @@ function PartnersPage() {
               </div>
             ))}
           </div>
-          <p className="mt-12 text-sm font-medium tracking-[0.2em] text-muted-foreground">
+          <p className="mt-12 mx-[23px] my-[46px] px-0 py-0 text-sm font-medium tracking-[0.2em] text-muted-foreground">
             PARTNERS
           </p>
         </div>
