@@ -48,8 +48,8 @@ export function Footer() {
             <ul className="mt-5 space-y-3 text-sm text-white/70">
               <li className="flex items-start gap-3">
                 <Mail size={15} className="mt-0.5 text-cyan" />
-                <a href="mailto:comercial@nexcore.com.br" className="hover:text-white">
-                  comercial@nexcore.com.br
+                <a href="mailto:adriano@nexcore.com.br" className="hover:text-white">
+                  adriano@nexcore.com.br
                 </a>
               </li>
               <li className="flex items-start gap-3">
