@@ -33,15 +33,15 @@ const solutions: Solution[] = [
   },
   {
     id: "sealing",
-    title: "MCT Wallmax",
+    title: "Sealing Solutions",
     intro:
-      "Multi Cable Transit (MCT): vedações modulares para cabos e tubos, com proteção contra fogo, estanqueidade de água e gás, e barreira contra parasitas (ratos e insetos).",
+      "Multi Cable Transit Solutions developed to ensure reliable and secure sealing of cable and pipe penetrations in critical environments.",
     bullets: [
-      { label: "Sistema modular", text: "Proteção contra fogo, água, gás e poeira em uma única solução." },
-      { label: "Áreas classificadas", text: "Proteções 'Ex' para uso em ambientes industriais e offshore." },
-      { label: "Manutenção fácil", text: "Inserção e remoção de cabos sem refazer toda a vedação." },
+      { label: "Modular systems", text: "Designed to protect against the ingress of dust, water, fire, and other environmental agents." },
+      { label: "High level of safety and protection", text: "With a wide range of solutions adaptable to different applications." },
+      { label: "Ease and practicality in installation", text: "And maintenance, reducing intervention time and operational costs." },
     ],
-    images: [mctWallmax, mctModulo, mctCircular, selagemBeele],
+    images: [mctWallmax, mctCircular, mctModulo, selagemBeele],
   },
   {
     id: "watertight",
