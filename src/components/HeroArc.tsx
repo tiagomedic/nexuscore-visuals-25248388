@@ -66,6 +66,16 @@ export function HeroArc() {
           </motion.p>
 
           <motion.a
+            href="mailto:adriano@nexcorebrasil.com"
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 1.2 }}
+            className="inline-flex items-center gap-2 rounded-full bg-cyan px-8 py-4 text-xs font-semibold uppercase tracking-[0.22em] text-deep shadow-glow transition-all hover:-translate-y-0.5"
+          >
+            Get in touch →
+          </motion.a>
+
+          <motion.a
             href="#about-preview"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
