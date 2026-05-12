@@ -21,15 +21,15 @@ interface Solution {
 const solutions: Solution[] = [
   {
     id: "electrical",
-    title: "Prensa-Cabos Ex (CMP)",
+    title: "Electrical Connectivity",
     intro:
-      "Prensa-cabos para cabos armados, não armados e conduítes em áreas classificadas, com proteções 'Ex db', 'Ex eb', 'Ex nr' e 'Ex ta'. Inclui modelos com barreira em epóxi/resina conforme ABNT NBR IEC 60079-14.",
+      "Solutions for cable connection, fixation, and protection in critical environments.",
     bullets: [
-      { label: "Materiais nobres", text: "Aço inoxidável 316L, latão niquelado e alumínio." },
-      { label: "Anti-Coldflow", text: "Tecnologia de prevenção ao coldflow e proteção IP66/W, IP67 e IP68." },
-      { label: "Roscas e certificações", text: "Roscas métricas e NPT. Certificados Inmetro, ATEX, IECEx, UL e CSA." },
+      { label: "Cable Glands", text: "For industrial and hazardous (Ex) areas, with international certifications." },
+      { label: "Cable Cleats", text: "Designed and tested in accordance with IEC 61914:2009." },
+      { label: "Accessories and Adaptors", text: "Complete range for cable management and infrastructure." },
     ],
-    images: [prensaCabo, prensaCabo2, adaptadores, cableCleat],
+    images: [prensaCabo, cableCleat, adaptadores, prensaCabo2],
   },
   {
     id: "sealing",
