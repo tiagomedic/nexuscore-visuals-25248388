@@ -1,19 +1,13 @@
 import { motion } from "framer-motion";
-import { ParticlesBackground } from "./ParticlesBackground";
 import { ArrowDown } from "lucide-react";
+import ShaderBackground from "./ui/shader-background";
 
 export function HeroArc() {
   return (
     <section className="relative isolate flex min-h-screen items-end overflow-hidden bg-deep text-deep-foreground">
-      {/* Earth-from-space gradient */}
-      <div
-        className="absolute inset-0 -z-20"
-        style={{
-          background:
-            "radial-gradient(ellipse 80% 60% at 0% 100%, oklch(0.42 0.18 235 / 0.55), transparent 60%), radial-gradient(ellipse 60% 50% at 100% 0%, oklch(0.32 0.12 250 / 0.4), transparent 60%), linear-gradient(180deg, oklch(0.14 0.05 256), oklch(0.22 0.08 256))",
-        }}
-      />
-      <ParticlesBackground density={70} color="#7dd3fc" />
+      {/* Animated WebGL shader background */}
+      <ShaderBackground className="absolute inset-0 -z-20 h-full w-full" />
+      <div className="absolute inset-0 -z-10 bg-gradient-to-b from-transparent via-transparent to-deep/60" />
 
       {/* Decorative arc */}
       <svg
