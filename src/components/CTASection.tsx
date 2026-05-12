@@ -1,5 +1,3 @@
-import { Link } from "@tanstack/react-router";
-
 export function CTASection() {
   return (
     <section className="relative overflow-hidden bg-cta py-28 text-white">
@@ -22,12 +20,12 @@ export function CTASection() {
           <br />
           We ensure critical operations never stop.
         </p>
-        <Link
-          to="/contato"
+        <a
+          href="mailto:adriano@nexcorebrasil.com"
           className="mt-12 inline-flex items-center gap-2 rounded-full bg-white px-8 py-4 text-sm font-semibold uppercase tracking-[0.22em] text-primary shadow-glow transition-all hover:-translate-y-0.5"
         >
           Get in touch →
-        </Link>
+        </a>
       </div>
     </section>
   );
