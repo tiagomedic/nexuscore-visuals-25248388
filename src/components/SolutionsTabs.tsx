@@ -13,6 +13,9 @@ import mctModulo from "@/assets/produto-mct-modulo-v2.png";
 import mctCircular from "@/assets/produto-mct-circular-v2.png";
 import selagemBeele from "@/assets/produto-selagem-beele-v2.png";
 import suportesTubulacao from "@/assets/produto-suportes-tubulacao.jpg";
+import watertight1 from "@/assets/watertight-1.png";
+import watertight2 from "@/assets/watertight-2.png";
+import watertight3 from "@/assets/watertight-3.png";
 
 interface Solution {
   id: string;
@@ -49,15 +52,14 @@ const solutions: Solution[] = [
   },
   {
     id: "watertight",
-    title: "Selos UGA System-Technik",
+    title: "Watertight Sealing Solutions",
     intro:
-      "Selos para cabos e tubos lisos ou corrugados em aplicações subterrâneas e enterradas, garantindo estanqueidade total de água e gás.",
+      "Sealing solutions for building penetrations, such as core drillings, ensuring watertight and gas-tight performance.",
     bullets: [
-      { label: "Subterrâneo & enterrado", text: "Especificado para passagens em paredes, lajes e dutos." },
-      { label: "Estanqueidade total", text: "Vedação confiável de água e gás em condições severas." },
-      { label: "Anti-parasitas", text: "Proteção contra ratos e insetos em pontos críticos." },
+      { label: "Split solutions", text: "For cables or pipes already installed, allowing easy assembly even after installation is completed." },
+      { label: "Versatile system", text: "That enables sealing of a wide range of cable and pipe configurations." },
     ],
-    images: [selagemBeele, mctCircular, mctModulo, mctWallmax],
+    images: [watertight1, watertight2, watertight3, watertight3],
   },
   {
     id: "beele",
