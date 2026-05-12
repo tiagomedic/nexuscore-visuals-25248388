@@ -126,7 +126,7 @@ export function SolutionsTabs() {
         >
           <div className="bg-deep p-8 text-white md:p-12">
             <h3 className="text-3xl font-medium text-cyan md:text-4xl">{sol.title}</h3>
-            <p className="mt-6 text-sm leading-relaxed text-white/75 md:text-base">
+            <p className="mt-6 whitespace-pre-line text-sm leading-relaxed text-white/75 md:text-base">
               {sol.intro}
             </p>
             <ul className="mt-10 space-y-5">
