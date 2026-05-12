@@ -59,9 +59,8 @@ function PartnersPage() {
               </div>
             ))}
           </div>
-          <p className="mt-12 max-w-2xl text-sm text-muted-foreground">
-            * Lista representativa. A composição da carteira de parceiros pode variar conforme o escopo do projeto.
-            Entre em contato para informações específicas de fornecimento.
+          <p className="mt-12 text-sm font-medium tracking-[0.2em] text-muted-foreground">
+            PARTNERS
           </p>
         </div>
       </section>
