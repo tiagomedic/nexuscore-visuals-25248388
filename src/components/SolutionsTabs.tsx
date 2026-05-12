@@ -20,6 +20,10 @@ import beele1 from "@/assets/beele-1.png";
 import beele2 from "@/assets/beele-2.png";
 import beele3 from "@/assets/beele-3.png";
 import beele4 from "@/assets/beele-4.png";
+import pipe1 from "@/assets/pipe-1.png";
+import pipe2 from "@/assets/pipe-2.png";
+import pipe3 from "@/assets/pipe-3.png";
+import pipe4 from "@/assets/pipe-4.png";
 
 interface Solution {
   id: string;
@@ -78,15 +82,14 @@ const solutions: Solution[] = [
   },
   {
     id: "pipe",
-    title: "Pipe Supports (Carpenter & Paterson)",
-    intro:
-      "Linha completa de suportes de tubulação para projetos de infraestrutura crítica: suportes de molas, snubbers hidráulicos e isolamentos térmicos.",
+    title: "Pipe Support Technology",
+    intro: "Comprehensive range of Pipe Support Solutions.",
     bullets: [
-      { label: "Spring supports", text: "Suportes de carga variável e constante para tubulações dinâmicas." },
-      { label: "Snubbers hidráulicos", text: "Amortecedores axiais, transversais e multidirecionais." },
-      { label: "Hot Shoes", text: "Suportes com isolamentos térmicos para linhas de alta temperatura." },
+      { label: "Spring supports", text: "Snubbers, cold (cryogenic)/hot shoes." },
+      { label: "Ancillary equipment", text: "Rods and connectors, pipe attachments, beam attachments." },
+      { label: "PTFE", text: "Slide bearings and isolation products." },
     ],
-    images: [suportesTubulacao, adaptadores, cableCleat, prensaCabo],
+    images: [pipe1, pipe2, pipe3, pipe4],
   },
 ];
 
