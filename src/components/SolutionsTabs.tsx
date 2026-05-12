@@ -4,6 +4,10 @@ import prensaCabo from "@/assets/produto-prensa-cabo.jpg";
 import prensaCabo2 from "@/assets/produto-prensa-cabo-2.jpg";
 import adaptadores from "@/assets/produto-adaptadores.jpg";
 import cableCleat from "@/assets/produto-cable-cleat.jpg";
+import electricalGland1 from "@/assets/electrical-cable-gland-1.jpg";
+import electricalCleat from "@/assets/electrical-cable-cleat.jpg";
+import electricalAccessories from "@/assets/electrical-accessories.jpg";
+import electricalGland2 from "@/assets/electrical-cable-gland-2.jpg";
 import mctWallmax from "@/assets/produto-mct-wallmax.jpg";
 import mctModulo from "@/assets/produto-mct-modulo.jpg";
 import mctCircular from "@/assets/produto-mct-circular.jpg";
@@ -29,7 +33,7 @@ const solutions: Solution[] = [
       { label: "Cable Cleats", text: "Designed and tested in accordance with IEC 61914:2009." },
       { label: "Accessories and Adaptors", text: "Complete range for cable management and infrastructure." },
     ],
-    images: [prensaCabo, cableCleat, adaptadores, prensaCabo2],
+    images: [electricalGland1, electricalCleat, electricalAccessories, electricalGland2],
   },
   {
     id: "sealing",
