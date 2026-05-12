@@ -16,6 +16,10 @@ import suportesTubulacao from "@/assets/produto-suportes-tubulacao.jpg";
 import watertight1 from "@/assets/watertight-1.png";
 import watertight2 from "@/assets/watertight-2.png";
 import watertight3 from "@/assets/watertight-3.png";
+import beele1 from "@/assets/beele-1.png";
+import beele2 from "@/assets/beele-2.png";
+import beele3 from "@/assets/beele-3.png";
+import beele4 from "@/assets/beele-4.png";
 
 interface Solution {
   id: string;
@@ -63,15 +67,14 @@ const solutions: Solution[] = [
   },
   {
     id: "beele",
-    title: "Beele Safety Sealing",
+    title: "Beele Sealing Technologies",
     intro:
-      "Soluções flexíveis e modeláveis para selagem de cabos e tubos, com instalação prática independente da geometria da transição. Para construção naval, offshore, indústria e construção civil.",
+      "Whether in shipbuilding, offshore, industrial installations, or construction, Beele's first-class products and systems ensure optimum fire safety and watertight integrity.\n\nFrom fire-resistant sealing to gas-, smoke-, and watertight solutions for cable and pipe penetrations, as well as coating and insulation, Beele offers reliable solutions without metal components or mineral insulation — eliminating risks of corrosion in certain environments and preventing performance degradation over time.",
     bullets: [
-      { label: "Instalação flexível", text: "Adapta-se a qualquer área de transição sem moldes complexos." },
-      { label: "Antichama & estanque", text: "Proteção contra fogo, água e gás em uma única aplicação." },
-      { label: "Anti-parasitas", text: "Barreira eficiente contra ratos e insetos." },
+      { label: "Cable Transits / Pipe Penetrations", text: "Fire-resistant, gas-, smoke- and watertight sealing for cable and pipe penetrations." },
+      { label: "Gaskets Insulation / Coating", text: "Reliable coating and insulation without metal components or mineral insulation." },
     ],
-    images: [selagemBeele, mctCircular, mctWallmax, mctModulo],
+    images: [beele1, beele2, beele3, beele4],
   },
   {
     id: "pipe",
@@ -123,7 +126,7 @@ export function SolutionsTabs() {
         >
           <div className="bg-deep p-8 text-white md:p-12">
             <h3 className="text-3xl font-medium text-cyan md:text-4xl">{sol.title}</h3>
-            <p className="mt-6 text-sm leading-relaxed text-white/75 md:text-base">
+            <p className="mt-6 whitespace-pre-line text-sm leading-relaxed text-white/75 md:text-base">
               {sol.intro}
             </p>
             <ul className="mt-10 space-y-5">
