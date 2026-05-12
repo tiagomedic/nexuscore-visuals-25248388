@@ -74,14 +74,16 @@ export function Header() {
             </button>
           </div>
 
-          <Link
-            to="/contato"
+          <a
+            href="https://api.whatsapp.com/send/?phone=5521988506014"
+            target="_blank"
+            rel="noopener noreferrer"
             className="hidden text-[11px] font-medium uppercase tracking-[0.22em] text-white transition-all hover:text-cyan lg:inline-block"
           >
             <span className="border-b border-white/40 pb-1 hover:border-cyan">
               {lang === "pt" ? "Fale conosco" : "Get in touch"}
             </span>
-          </Link>
+          </a>
 
           <button
             className="text-white lg:hidden"
@@ -110,12 +112,14 @@ export function Header() {
               {l.label[lang]}
             </Link>
           ))}
-          <Link
-            to="/contato"
+          <a
+            href="https://api.whatsapp.com/send/?phone=5521988506014"
+            target="_blank"
+            rel="noopener noreferrer"
             className="mt-2 inline-block w-fit rounded-full bg-cyan px-5 py-2 text-xs font-medium uppercase tracking-[0.22em] text-deep"
           >
             {lang === "pt" ? "Fale conosco" : "Get in touch"}
-          </Link>
+          </a>
         </div>
       </div>
     </header>
