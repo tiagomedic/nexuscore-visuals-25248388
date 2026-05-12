@@ -6,8 +6,9 @@ export function HeroArc() {
   return (
     <section className="relative isolate flex min-h-screen items-end overflow-hidden bg-deep text-deep-foreground">
       {/* Animated WebGL shader background */}
-      <ShaderBackground className="absolute inset-0 -z-20 h-full w-full" />
-      <div className="absolute inset-0 -z-10 bg-gradient-to-b from-transparent via-transparent to-deep/60" />
+      <ShaderBackground className="absolute inset-0 -z-20 h-full w-full opacity-40" />
+      <div className="absolute inset-0 -z-10 bg-deep/70" />
+      <div className="absolute inset-0 -z-10 bg-gradient-to-b from-deep/40 via-deep/60 to-deep" />
 
       {/* Decorative arc */}
       <svg
@@ -37,9 +38,8 @@ export function HeroArc() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.3 }}
-          className="mb-8 flex items-center gap-3 text-[11px] font-medium uppercase tracking-[0.32em] text-cyan"
+          className="mb-8 text-[11px] font-medium uppercase tracking-[0.32em] text-cyan"
         >
-          <span className="h-px w-10 bg-cyan/60" />
           Critical Infrastructure Solution
         </motion.div>
 
