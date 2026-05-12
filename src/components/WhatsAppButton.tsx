@@ -1,13 +1,9 @@
 import { MessageCircle } from "lucide-react";
 
 export function WhatsAppButton() {
-  const phone = "5500000000000"; // placeholder; cliente pode trocar
-  const msg = encodeURIComponent(
-    "Olá! Gostaria de saber mais sobre as soluções da Nexcore Brasil."
-  );
   return (
     <a
-      href={`https://wa.me/${phone}?text=${msg}`}
+      href="https://api.whatsapp.com/send/?phone=5521988506014"
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Falar no WhatsApp"
