@@ -1,4 +1,5 @@
 import { Database, Zap, Droplets, Factory, Cog } from "lucide-react";
+import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 import heroIndustrial from "@/assets/hero-industrial.jpg";
 import mctWallmax from "@/assets/produto-mct-wallmax.jpg";
 import suportesTubulacao from "@/assets/produto-suportes-tubulacao.jpg";
@@ -44,8 +45,9 @@ const markets = [
 ];
 
 export function MarketsGrid() {
+  const ref = useScrollReveal<HTMLDivElement>({ selector: "article", y: 60, stagger: 0.15 });
   return (
-    <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-6">
+    <div ref={ref} className="grid gap-5 md:grid-cols-2 lg:grid-cols-6">
       {markets.map((m, i) => {
         const Icon = m.icon;
         const wide = i < 2;
