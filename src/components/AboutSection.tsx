@@ -22,12 +22,12 @@ export function AboutSection() {
           </p>
         </div>
 
-        <div data-reveal className="mt-16 overflow-hidden rounded-2xl shadow-soft">
+        <div data-reveal className="mt-16 overflow-hidden">
           <img
             src={aboutEngenheiro}
             alt={t("about.image.alt")}
             loading="lazy"
-            className="h-[420px] w-full object-cover md:h-[560px]"
+            className="mx-auto max-w-7xl px-6 lg:px-10 mb-0 pr-0 pb-0"
           />
         </div>
       </div>
