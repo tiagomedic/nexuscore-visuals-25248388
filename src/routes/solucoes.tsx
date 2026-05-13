@@ -15,7 +15,9 @@ export const Route = createFileRoute("/solucoes")({
       },
       { property: "og:title", content: "Soluções — Nexcore Brasil" },
       { property: "og:description", content: "Excelência técnica para ambientes exigentes." },
+      { property: "og:url", content: "https://www.nexcorebrasil.com/solucoes" },
     ],
+    links: [{ rel: "canonical", href: "https://www.nexcorebrasil.com/solucoes" }],
   }),
   component: SolutionsPage,
 });

@@ -83,14 +83,12 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:site_name", content: "Nexcore Brasil" },
       { property: "og:title", content: "Nexcore Brasil — Powering what cannot fail" },
       { property: "og:description", content: "Soluções integradas para Data Centers, Energia e Óleo & Gás." },
-      { property: "og:url", content: "https://www.nexcorebrasil.com" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: "Nexcore Brasil — Powering what cannot fail" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
       { rel: "icon", href: "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2032%2032%22%3E%3Crect%20width%3D%2232%22%20height%3D%2232%22%20rx%3D%226%22%20fill%3D%22%230B1B2A%22%2F%3E%3Ctext%20x%3D%2250%25%22%20y%3D%2256%25%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%20font-family%3D%22Inter%2Csans-serif%22%20font-weight%3D%22700%22%20font-size%3D%2216%22%20fill%3D%22%2300C2D1%22%3EN%3C%2Ftext%3E%3C%2Fsvg%3E" },
-      { rel: "canonical", href: "https://www.nexcorebrasil.com" },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
@@ -112,6 +110,22 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           description:
             "Soluções integradas de engenharia para infraestrutura crítica: Data Centers, Energia e Óleo & Gás.",
           areaServed: { "@type": "Country", name: "Brasil" },
+          contactPoint: [
+            {
+              "@type": "ContactPoint",
+              contactType: "sales",
+              email: "comercial@nexcorebrasil.com",
+              areaServed: "BR",
+              availableLanguage: ["Portuguese", "English"],
+            },
+            {
+              "@type": "ContactPoint",
+              contactType: "customer service",
+              email: "sac@nexcorebrasil.com",
+              areaServed: "BR",
+              availableLanguage: ["Portuguese"],
+            },
+          ],
           knowsAbout: [
             "Data Centers",
             "Energy",
@@ -133,7 +147,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 
 function RootShell({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="pt-BR">
       <head>
         <HeadContent />
       </head>

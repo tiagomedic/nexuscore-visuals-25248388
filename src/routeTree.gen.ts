@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as SolucoesRouteImport } from './routes/solucoes'
 import { Route as SobreRouteImport } from './routes/sobre'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as ParceirosRouteImport } from './routes/parceiros'
 import { Route as MercadosRouteImport } from './routes/mercados'
 import { Route as ContatoRouteImport } from './routes/contato'
@@ -24,6 +25,11 @@ const SolucoesRoute = SolucoesRouteImport.update({
 const SobreRoute = SobreRouteImport.update({
   id: '/sobre',
   path: '/sobre',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ParceirosRoute = ParceirosRouteImport.update({
@@ -52,6 +58,7 @@ export interface FileRoutesByFullPath {
   '/contato': typeof ContatoRoute
   '/mercados': typeof MercadosRoute
   '/parceiros': typeof ParceirosRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/sobre': typeof SobreRoute
   '/solucoes': typeof SolucoesRoute
 }
@@ -60,6 +67,7 @@ export interface FileRoutesByTo {
   '/contato': typeof ContatoRoute
   '/mercados': typeof MercadosRoute
   '/parceiros': typeof ParceirosRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/sobre': typeof SobreRoute
   '/solucoes': typeof SolucoesRoute
 }
@@ -69,6 +77,7 @@ export interface FileRoutesById {
   '/contato': typeof ContatoRoute
   '/mercados': typeof MercadosRoute
   '/parceiros': typeof ParceirosRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/sobre': typeof SobreRoute
   '/solucoes': typeof SolucoesRoute
 }
@@ -79,16 +88,25 @@ export interface FileRouteTypes {
     | '/contato'
     | '/mercados'
     | '/parceiros'
+    | '/sitemap.xml'
     | '/sobre'
     | '/solucoes'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/contato' | '/mercados' | '/parceiros' | '/sobre' | '/solucoes'
+  to:
+    | '/'
+    | '/contato'
+    | '/mercados'
+    | '/parceiros'
+    | '/sitemap.xml'
+    | '/sobre'
+    | '/solucoes'
   id:
     | '__root__'
     | '/'
     | '/contato'
     | '/mercados'
     | '/parceiros'
+    | '/sitemap.xml'
     | '/sobre'
     | '/solucoes'
   fileRoutesById: FileRoutesById
@@ -98,6 +116,7 @@ export interface RootRouteChildren {
   ContatoRoute: typeof ContatoRoute
   MercadosRoute: typeof MercadosRoute
   ParceirosRoute: typeof ParceirosRoute
+  SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   SobreRoute: typeof SobreRoute
   SolucoesRoute: typeof SolucoesRoute
 }
@@ -116,6 +135,13 @@ declare module '@tanstack/react-router' {
       path: '/sobre'
       fullPath: '/sobre'
       preLoaderRoute: typeof SobreRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/parceiros': {
@@ -154,9 +180,20 @@ const rootRouteChildren: RootRouteChildren = {
   ContatoRoute: ContatoRoute,
   MercadosRoute: MercadosRoute,
   ParceirosRoute: ParceirosRoute,
+  SitemapDotxmlRoute: SitemapDotxmlRoute,
   SobreRoute: SobreRoute,
   SolucoesRoute: SolucoesRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}

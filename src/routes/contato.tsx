@@ -17,7 +17,9 @@ export const Route = createFileRoute("/contato")({
       },
       { property: "og:title", content: "Contato — Nexcore Brasil" },
       { property: "og:description", content: "Nossa equipe técnica pronta para apoiar seu projeto." },
+      { property: "og:url", content: "https://www.nexcorebrasil.com/contato" },
     ],
+    links: [{ rel: "canonical", href: "https://www.nexcorebrasil.com/contato" }],
   }),
   component: ContactPage,
 });

@@ -16,7 +16,9 @@ export const Route = createFileRoute("/sobre")({
       },
       { property: "og:title", content: "Sobre a Nexcore Brasil" },
       { property: "og:description", content: "Engenharia para infraestrutura crítica no Brasil e exterior." },
+      { property: "og:url", content: "https://www.nexcorebrasil.com/sobre" },
     ],
+    links: [{ rel: "canonical", href: "https://www.nexcorebrasil.com/sobre" }],
   }),
   component: AboutPage,
 });

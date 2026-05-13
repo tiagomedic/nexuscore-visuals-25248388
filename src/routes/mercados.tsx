@@ -15,7 +15,9 @@ export const Route = createFileRoute("/mercados")({
       },
       { property: "og:title", content: "Mercados — Nexcore Brasil" },
       { property: "og:description", content: "Setores onde a continuidade operacional é essencial." },
+      { property: "og:url", content: "https://www.nexcorebrasil.com/mercados" },
     ],
+    links: [{ rel: "canonical", href: "https://www.nexcorebrasil.com/mercados" }],
   }),
   component: MarketsPage,
 });
