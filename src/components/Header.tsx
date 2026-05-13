@@ -121,6 +121,21 @@ export function Header() {
           >
             {t("nav.cta")}
           </a>
+          <div className="mt-4 flex items-center gap-2 border-t border-white/10 pt-4 text-[11px] font-medium tracking-widest text-white/60">
+            <button
+              onClick={() => setLang("en")}
+              className={cn("transition-colors hover:text-white", lang === "en" && "text-white")}
+            >
+              EN
+            </button>
+            <span className="text-white/30">|</span>
+            <button
+              onClick={() => setLang("pt")}
+              className={cn("transition-colors hover:text-white", lang === "pt" && "text-white")}
+            >
+              PT
+            </button>
+          </div>
         </div>
       </div>
     </header>
