@@ -26,12 +26,14 @@ export const Route = createFileRoute("/parceiros")({
   component: PartnersPage,
 });
 
+// Mobile order: CMP first, then the rest.
+// Desktop layout (chess pattern): top row [Wallmax, CMP, Carpenter], bottom row [Beele, UGA] offset between them.
 const partners = [
-  { name: "Wallmax", logo: partnerWallmax },
-  { name: "Carpenter & Paterson", logo: partnerCarpenter },
-  { name: "CMP", logo: partnerCmp },
-  { name: "Beele Safety Sealing Systems", logo: partnerBeele },
-  { name: "UGA Cable and Pipe Entries", logo: partnerUga },
+  { name: "CMP", logo: partnerCmp, desktop: "md:col-start-3 md:col-span-2 md:row-start-1" },
+  { name: "Wallmax", logo: partnerWallmax, desktop: "md:col-start-1 md:col-span-2 md:row-start-1" },
+  { name: "Carpenter & Paterson", logo: partnerCarpenter, desktop: "md:col-start-5 md:col-span-2 md:row-start-1" },
+  { name: "Beele Safety Sealing Systems", logo: partnerBeele, desktop: "md:col-start-2 md:col-span-2 md:row-start-2" },
+  { name: "UGA Cable and Pipe Entries", logo: partnerUga, desktop: "md:col-start-4 md:col-span-2 md:row-start-2" },
 ];
 
 function PartnersPage() {
@@ -54,14 +56,17 @@ function PartnersPage() {
           <p className="mb-10 text-sm font-medium tracking-[0.2em] text-muted-foreground">
             {t("partnersPage.label")}
           </p>
-          <div className="grid grid-cols-2 items-center gap-8 md:grid-cols-3 lg:grid-cols-5 lg:gap-12">
+          <div className="grid grid-cols-1 items-center gap-10 sm:grid-cols-2 md:grid-cols-6 md:gap-x-8 md:gap-y-14 lg:gap-x-12">
             {partners.map((p) => (
-              <div key={p.name} className="flex items-center justify-center">
+              <div
+                key={p.name}
+                className={`flex items-center justify-center ${p.desktop}`}
+              >
                 <img
                   src={p.logo}
                   alt={p.name}
                   loading="lazy"
-                  className="max-h-24 w-auto transition-smooth hover:opacity-100 object-contain mx-0 my-0 px-0 py-0"
+                  className="max-h-24 w-auto object-contain transition-smooth hover:scale-105"
                 />
               </div>
             ))}
