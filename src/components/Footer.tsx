@@ -25,7 +25,7 @@ export function Footer() {
               <li><Link to="/solucoes" className="hover:text-white">{t("footer.nav.solutions")}</Link></li>
               <li><Link to="/mercados" className="hover:text-white">{t("footer.nav.markets")}</Link></li>
               <li><Link to="/parceiros" className="hover:text-white">{t("footer.nav.partners")}</Link></li>
-              <li><Link to="/contato" className="hover:text-white">{t("footer.nav.contact")}</Link></li>
+              <li><a href="mailto:comercial@nexcorebrasil.com.br" className="hover:text-white">{t("footer.nav.contact")}</a></li>
             </ul>
           </div>
 
