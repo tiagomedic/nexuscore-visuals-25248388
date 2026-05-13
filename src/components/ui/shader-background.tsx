@@ -131,6 +131,14 @@ const ShaderBackground = ({ className }: ShaderBackgroundProps) => {
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
+    // Skip the heavy WebGL shader on mobile / low-power / reduced-motion devices.
+    const isMobile = window.matchMedia("(max-width: 1024px)").matches;
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const lowMem =
+      (navigator as unknown as { deviceMemory?: number }).deviceMemory !== undefined &&
+      ((navigator as unknown as { deviceMemory?: number }).deviceMemory ?? 8) < 4;
+    if (isMobile || reducedMotion || lowMem) return;
+
     const gl = canvas.getContext("webgl");
     if (!gl) {
       console.warn("WebGL not supported.");
@@ -152,7 +160,7 @@ const ShaderBackground = ({ className }: ShaderBackgroundProps) => {
     const uResolution = gl.getUniformLocation(program, "iResolution");
     const uTime = gl.getUniformLocation(program, "iTime");
 
-    const dpr = Math.min(window.devicePixelRatio || 1, 1.5);
+    const dpr = Math.min(window.devicePixelRatio || 1, 1.25);
     const resizeCanvas = () => {
       const w = canvas.clientWidth || window.innerWidth;
       const h = canvas.clientHeight || window.innerHeight;
