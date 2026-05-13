@@ -98,6 +98,17 @@ function ContactPage() {
               </li>
               <li className="flex items-start gap-4">
                 <span className="flex h-10 w-10 items-center justify-center rounded-full bg-deep text-cyan">
+                  <Mail size={16} />
+                </span>
+                <div>
+                  <p className="font-semibold text-primary">SAC — Atendimento ao Cliente</p>
+                  <a href="mailto:sac@nexcorebrasil.com" className="text-muted-foreground hover:text-primary">
+                    sac@nexcorebrasil.com
+                  </a>
+                </div>
+              </li>
+              <li className="flex items-start gap-4">
+                <span className="flex h-10 w-10 items-center justify-center rounded-full bg-deep text-cyan">
                   <Phone size={16} />
                 </span>
                 <div>
