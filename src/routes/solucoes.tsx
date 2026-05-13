@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { SectionHeading } from "@/components/SectionHeading";
 import { SolutionsTabs } from "@/components/SolutionsTabs";
 import { CTASection } from "@/components/CTASection";
+import { useLanguage } from "@/i18n/LanguageProvider";
 
 export const Route = createFileRoute("/solucoes")({
   head: () => ({
@@ -20,6 +21,7 @@ export const Route = createFileRoute("/solucoes")({
 });
 
 function SolutionsPage() {
+  const { t } = useLanguage();
   return (
     <>
       <section className="relative overflow-hidden bg-deep pb-20 pt-40 text-white md:pb-28 md:pt-44">
@@ -28,9 +30,9 @@ function SolutionsPage() {
         <div className="mx-auto max-w-7xl px-6 lg:px-10">
           <SectionHeading
             variant="dark"
-            eyebrow="Solutions"
-            title={<>Technical excellence for <em className="font-serif-italic text-cyan">demanding environments.</em></>}
-            description="Da especificação ao comissionamento, garantimos zero-failure outcome para Offshore Platforms, Data Centers e Substations."
+            eyebrow={t("solPage.eyebrow")}
+            title={<>{t("solPage.title.prefix")} <em className="font-serif-italic text-cyan">{t("solPage.title.italic")}</em></>}
+            description={t("solPage.description")}
           />
         </div>
       </section>
