@@ -4,11 +4,13 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ArrowDown } from "lucide-react";
 import ShaderBackground from "./ui/shader-background";
+import { useLanguage } from "@/i18n/LanguageProvider";
 
 gsap.registerPlugin(ScrollTrigger);
 
 export function HeroArc() {
   const sectionRef = useRef<HTMLElement | null>(null);
+  const { t } = useLanguage();
 
   useEffect(() => {
     const el = sectionRef.current;
@@ -66,7 +68,7 @@ export function HeroArc() {
           transition={{ duration: 0.8, delay: 0.3 }}
           className="mb-8 text-[11px] font-medium uppercase tracking-[0.32em] text-cyan"
         >
-          Critical Infrastructure Solution
+          {t("hero.eyebrow")}
         </motion.div>
 
         <motion.h1
@@ -75,9 +77,9 @@ export function HeroArc() {
           transition={{ duration: 1, delay: 0.5 }}
           className="max-w-5xl text-5xl font-light leading-[1.02] tracking-tight text-white sm:text-6xl md:text-7xl lg:text-8xl"
         >
-          Powering what
+          {t("hero.title.line1")}
           <br />
-          cannot <span className="font-serif-italic text-cyan">fail</span>
+          {t("hero.title.line2.prefix")} <span className="font-serif-italic text-cyan">{t("hero.title.line2.italic")}</span>
         </motion.h1>
 
         <div className="mt-16 flex flex-col items-start justify-between gap-10 lg:flex-row lg:items-end">
@@ -87,8 +89,7 @@ export function HeroArc() {
             transition={{ duration: 1, delay: 1 }}
             className="max-w-md text-base leading-relaxed text-white/75 lg:ml-auto lg:text-right"
           >
-            Integrated solutions for critical infrastructure: <br />
-            Data Centers, Energy and Oil &amp; Gas.
+            {t("hero.subtitle")}
           </motion.p>
 
           <motion.a
@@ -98,7 +99,7 @@ export function HeroArc() {
             transition={{ duration: 0.8, delay: 1.2 }}
             className="inline-flex items-center gap-2 rounded-full bg-cyan px-8 py-4 text-xs font-semibold uppercase tracking-[0.22em] text-deep shadow-glow transition-all hover:-translate-y-0.5"
           >
-            Get in touch →
+            {t("hero.cta")}
           </motion.a>
 
           <motion.a
