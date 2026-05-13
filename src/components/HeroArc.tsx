@@ -1,9 +1,9 @@
 import { motion } from "framer-motion";
-import { useEffect, useRef } from "react";
+import { lazy, Suspense, useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ArrowDown } from "lucide-react";
-import ShaderBackground from "./ui/shader-background";
+const ShaderBackground = lazy(() => import("./ui/shader-background"));
 import { useLanguage } from "@/i18n/LanguageProvider";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -33,8 +33,10 @@ export function HeroArc() {
 
   return (
     <section ref={sectionRef} className="relative isolate flex min-h-screen items-end overflow-hidden bg-deep text-deep-foreground">
-      {/* Animated WebGL shader background */}
-      <ShaderBackground className="absolute inset-0 -z-20 h-full w-full opacity-40" />
+      {/* Animated WebGL shader background (desktop only, lazy) */}
+      <Suspense fallback={null}>
+        <ShaderBackground className="absolute inset-0 -z-20 h-full w-full opacity-40" />
+      </Suspense>
       <div className="absolute inset-0 -z-10 bg-deep/70" />
       <div className="absolute inset-0 -z-10 bg-gradient-to-b from-deep/40 via-deep/60 to-deep" />
 
@@ -61,7 +63,7 @@ export function HeroArc() {
         />
       </svg>
 
-      <div data-hero-parallax className="relative mx-auto w-full max-w-7xl px-6 pb-20 pt-40 lg:px-10">
+      <div data-hero-parallax className="relative mx-auto w-full max-w-7xl px-6 pb-16 pt-32 sm:pb-20 sm:pt-40 lg:px-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -75,14 +77,14 @@ export function HeroArc() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.5 }}
-          className="max-w-5xl text-5xl font-light leading-[1.02] tracking-tight text-white sm:text-6xl md:text-7xl lg:text-8xl"
+          className="max-w-5xl text-4xl font-light leading-[1.05] tracking-tight text-white sm:text-6xl md:text-7xl lg:text-8xl"
         >
           {t("hero.title.line1")}
           <br />
           {t("hero.title.line2.prefix")} <span className="font-serif-italic text-cyan">{t("hero.title.line2.italic")}</span>
         </motion.h1>
 
-        <div className="mt-16 flex flex-col items-start justify-between gap-10 lg:flex-row lg:items-end">
+        <div className="mt-10 flex flex-col items-start justify-between gap-8 sm:mt-16 sm:gap-10 lg:flex-row lg:items-end">
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
