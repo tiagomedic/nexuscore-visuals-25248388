@@ -27,9 +27,9 @@ export const Route = createFileRoute("/parceiros")({
 });
 
 const partners = [
-  { name: "CMP", logo: partnerCmp },
   { name: "Wallmax", logo: partnerWallmax },
   { name: "Carpenter & Paterson", logo: partnerCarpenter },
+  { name: "CMP", logo: partnerCmp },
   { name: "Beele Safety Sealing Systems", logo: partnerBeele },
   { name: "UGA Cable and Pipe Entries", logo: partnerUga },
 ];

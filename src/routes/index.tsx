@@ -14,9 +14,9 @@ import partnerBeele from "@/assets/partner-beele.png";
 import partnerUga from "@/assets/partner-uga.png";
 
 const homePartners = [
-  { name: "CMP", logo: partnerCmp },
   { name: "Wallmax", logo: partnerWallmax },
   { name: "Carpenter & Paterson", logo: partnerCarpenter },
+  { name: "CMP", logo: partnerCmp },
   { name: "Beele Safety Sealing Systems", logo: partnerBeele },
   { name: "UGA Cable and Pipe Entries", logo: partnerUga },
 ];
