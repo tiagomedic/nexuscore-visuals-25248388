@@ -32,6 +32,11 @@ export const Route = createFileRoute("/")({
       },
       { property: "og:title", content: "Nexcore Brasil — Powering what cannot fail" },
       { property: "og:description", content: "Soluções integradas para infraestrutura crítica no Brasil." },
+      { property: "og:url", content: "https://www.nexcorebrasil.com/" },
+      { name: "twitter:description", content: "Soluções integradas para infraestrutura crítica no Brasil." },
+    ],
+    links: [
+      { rel: "canonical", href: "https://www.nexcorebrasil.com/" },
     ],
   }),
   component: HomePage,

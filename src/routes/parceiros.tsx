@@ -19,7 +19,9 @@ export const Route = createFileRoute("/parceiros")({
       },
       { property: "og:title", content: "Parceiros — Nexcore Brasil" },
       { property: "og:description", content: "Tecnologias globais para projetos críticos." },
+      { property: "og:url", content: "https://www.nexcorebrasil.com/parceiros" },
     ],
+    links: [{ rel: "canonical", href: "https://www.nexcorebrasil.com/parceiros" }],
   }),
   component: PartnersPage,
 });
