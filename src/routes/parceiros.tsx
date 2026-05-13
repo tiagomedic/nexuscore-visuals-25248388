@@ -6,6 +6,7 @@ import partnerWallmax from "@/assets/partner-wallmax.png";
 import partnerCarpenter from "@/assets/partner-carpenter.png";
 import partnerBeele from "@/assets/partner-beele.png";
 import partnerUga from "@/assets/partner-uga.png";
+import { useLanguage } from "@/i18n/LanguageProvider";
 
 export const Route = createFileRoute("/parceiros")({
   head: () => ({
@@ -32,15 +33,16 @@ const partners = [
 ];
 
 function PartnersPage() {
+  const { t } = useLanguage();
   return (
     <>
       <section className="relative overflow-hidden bg-deep pb-20 pt-40 text-white md:pb-28 md:pt-44">
         <div className="mx-auto max-w-7xl px-6 lg:px-10">
           <SectionHeading
             variant="dark"
-            eyebrow="Partners"
-            title={<>Tecnologias globais. <em className="font-serif-italic text-cyan">Entrega local.</em></>}
-            description="Representamos e integramos fabricantes reconhecidos mundialmente em projetos de infraestrutura crítica."
+            eyebrow={t("partnersPage.eyebrow")}
+            title={<>{t("partnersPage.title.prefix")} <em className="font-serif-italic text-cyan">{t("partnersPage.title.italic")}</em></>}
+            description={t("partnersPage.description")}
           />
         </div>
       </section>
@@ -48,7 +50,7 @@ function PartnersPage() {
       <section className="bg-secondary py-24 md:py-32">
         <div className="mx-auto max-w-7xl px-6 lg:px-10">
           <p className="mb-10 text-sm font-medium tracking-[0.2em] text-muted-foreground">
-            PARTNERS
+            {t("partnersPage.label")}
           </p>
           <div className="grid grid-cols-2 items-center gap-8 md:grid-cols-3 lg:grid-cols-5 lg:gap-12">
             {partners.map((p) => (
