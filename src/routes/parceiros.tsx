@@ -61,7 +61,7 @@ function PartnersPage() {
                   src={p.logo}
                   alt={p.name}
                   loading="lazy"
-                  className="max-h-24 w-auto object-contain transition-smooth hover:opacity-100"
+                  className="max-h-24 w-auto transition-smooth hover:opacity-100 object-contain mx-0 my-0 px-0 py-0"
                 />
               </div>
             ))}
