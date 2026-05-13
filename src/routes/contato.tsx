@@ -24,7 +24,7 @@ export const Route = createFileRoute("/contato")({
   component: ContactPage,
 });
 
-const WHATS = "5521988506014";
+const WHATS = "5521988766937";
 
 function ContactPage() {
   const [submitting, setSubmitting] = useState(false);
@@ -115,7 +115,7 @@ function ContactPage() {
                 </span>
                 <div>
                   <p className="font-semibold text-primary">{t("contactPage.phone")}</p>
-                  <p className="text-muted-foreground">+55 (21) 98850-6014</p>
+                  <p className="text-muted-foreground">+55 (21) 98876-6937</p>
                 </div>
               </li>
               <li className="flex items-start gap-4">
@@ -125,7 +125,7 @@ function ContactPage() {
                 <div>
                   <p className="font-semibold text-primary">{t("contactPage.whatsapp")}</p>
                   <a
-                    href="https://api.whatsapp.com/send/?phone=5521988506014"
+                    href="https://api.whatsapp.com/send/?phone=5521988766937"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-muted-foreground hover:text-primary"

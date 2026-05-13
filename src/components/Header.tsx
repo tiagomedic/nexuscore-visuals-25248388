@@ -76,7 +76,7 @@ export function Header() {
           </div>
 
           <a
-            href="https://api.whatsapp.com/send/?phone=5521988506014"
+            href="https://api.whatsapp.com/send/?phone=5521988766937"
             target="_blank"
             rel="noopener noreferrer"
             className="hidden text-[11px] font-medium uppercase tracking-[0.22em] text-white transition-all hover:text-cyan lg:inline-block"
@@ -114,7 +114,7 @@ export function Header() {
             </Link>
           ))}
           <a
-            href="https://api.whatsapp.com/send/?phone=5521988506014"
+            href="https://api.whatsapp.com/send/?phone=5521988766937"
             target="_blank"
             rel="noopener noreferrer"
             className="mt-2 inline-block w-fit rounded-full bg-cyan px-5 py-2 text-xs font-medium uppercase tracking-[0.22em] text-deep"
