@@ -96,7 +96,7 @@ export function HeroArc() {
           </motion.p>
 
           <motion.a
-            href="mailto:comercial@nexcore.com"
+            href="mailto:comercial@nexcorebrasil.com"
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 1.2 }}

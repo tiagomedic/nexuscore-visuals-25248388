@@ -107,7 +107,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           name: "Nexcore Brasil",
           alternateName: "Nexcore Integrated Solutions",
           url: "https://www.nexcorebrasil.com",
-          email: "comercial@nexcore.com.br",
+          email: "comercial@nexcorebrasil.com",
           slogan: "Powering what cannot fail",
           description:
             "Soluções integradas de engenharia para infraestrutura crítica: Data Centers, Energia e Óleo & Gás.",
