@@ -88,7 +88,7 @@ function HomePage() {
                   src={p.logo}
                   alt={p.name}
                   loading="lazy"
-                  className="max-h-20 w-auto object-contain opacity-70 grayscale transition-smooth hover:opacity-100"
+                  className="max-h-20 w-auto object-contain transition-smooth hover:opacity-100"
                 />
               </div>
             ))}
