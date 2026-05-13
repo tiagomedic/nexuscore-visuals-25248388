@@ -14,21 +14,21 @@ import { Footer } from "@/components/Footer";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
 import { SmoothScroll } from "@/components/SmoothScroll";
 import { Toaster } from "@/components/ui/sonner";
+import { LanguageProvider, useLanguage } from "@/i18n/LanguageProvider";
 
 function NotFoundComponent() {
+  const { t } = useLanguage();
   return (
     <div className="flex min-h-screen items-center justify-center bg-deep px-4 text-white">
       <div className="max-w-md text-center">
         <h1 className="text-7xl font-light text-cyan">404</h1>
-        <h2 className="mt-4 text-xl font-medium">Página não encontrada</h2>
-        <p className="mt-2 text-sm text-white/65">
-          A página que você está procurando não existe ou foi movida.
-        </p>
+        <h2 className="mt-4 text-xl font-medium">{t("nf.title")}</h2>
+        <p className="mt-2 text-sm text-white/65">{t("nf.body")}</p>
         <Link
           to="/"
           className="mt-6 inline-flex items-center justify-center rounded-full bg-cyan px-6 py-3 text-sm font-medium text-deep transition-colors hover:bg-white"
         >
-          Voltar ao início
+          {t("nf.back")}
         </Link>
       </div>
     </div>
@@ -132,7 +132,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 
 function RootShell({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="pt-BR">
+    <html lang="en">
       <head>
         <HeadContent />
       </head>
@@ -148,16 +148,18 @@ function RootComponent() {
   const { queryClient } = Route.useRouteContext();
   return (
     <QueryClientProvider client={queryClient}>
-      <SmoothScroll />
-      <div className="flex min-h-screen flex-col">
-        <Header />
-        <main className="flex-1">
-          <Outlet />
-        </main>
-        <Footer />
-        <WhatsAppButton />
-        <Toaster richColors position="top-right" />
-      </div>
+      <LanguageProvider>
+        <SmoothScroll />
+        <div className="flex min-h-screen flex-col">
+          <Header />
+          <main className="flex-1">
+            <Outlet />
+          </main>
+          <Footer />
+          <WhatsAppButton />
+          <Toaster richColors position="top-right" />
+        </div>
+      </LanguageProvider>
     </QueryClientProvider>
   );
 }

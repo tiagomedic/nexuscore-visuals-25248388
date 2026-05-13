@@ -3,18 +3,19 @@ import { Link, useLocation } from "@tanstack/react-router";
 import { Menu, X } from "lucide-react";
 import { Logo } from "./Logo";
 import { cn } from "@/lib/utils";
+import { useLanguage } from "@/i18n/LanguageProvider";
 
 const links = [
-  { to: "/sobre", label: { pt: "Sobre", en: "About" } },
-  { to: "/solucoes", label: { pt: "Soluções", en: "Solutions" } },
-  { to: "/mercados", label: { pt: "Mercados", en: "Markets" } },
-  { to: "/parceiros", label: { pt: "Parceiros", en: "Partners" } },
+  { to: "/sobre", key: "nav.about" },
+  { to: "/solucoes", key: "nav.solutions" },
+  { to: "/mercados", key: "nav.markets" },
+  { to: "/parceiros", key: "nav.partners" },
 ] as const;
 
 export function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
-  const [lang, setLang] = useState<"pt" | "en">("pt");
+  const { lang, setLang, t } = useLanguage();
   const location = useLocation();
 
   useEffect(() => {
@@ -51,7 +52,7 @@ export function Header() {
               className="group relative text-[11px] font-medium uppercase tracking-[0.22em] text-white/75 transition-colors hover:text-white"
               activeProps={{ className: "!text-cyan" }}
             >
-              {l.label[lang]}
+              {t(l.key)}
               <span className="absolute -bottom-1 left-0 h-px w-0 bg-cyan transition-all duration-300 group-hover:w-full" />
             </Link>
           ))}
@@ -81,7 +82,7 @@ export function Header() {
             className="hidden text-[11px] font-medium uppercase tracking-[0.22em] text-white transition-all hover:text-cyan lg:inline-block"
           >
             <span className="border-b border-white/40 pb-1 hover:border-cyan">
-              {lang === "pt" ? "Fale conosco" : "Get in touch"}
+              {t("nav.cta")}
             </span>
           </a>
 
@@ -109,7 +110,7 @@ export function Header() {
               to={l.to}
               className="py-3 text-sm uppercase tracking-[0.22em] text-white/80 hover:text-cyan"
             >
-              {l.label[lang]}
+              {t(l.key)}
             </Link>
           ))}
           <a
@@ -118,7 +119,7 @@ export function Header() {
             rel="noopener noreferrer"
             className="mt-2 inline-block w-fit rounded-full bg-cyan px-5 py-2 text-xs font-medium uppercase tracking-[0.22em] text-deep"
           >
-            {lang === "pt" ? "Fale conosco" : "Get in touch"}
+            {t("nav.cta")}
           </a>
         </div>
       </div>

@@ -5,6 +5,7 @@ import { SolutionsTabs } from "@/components/SolutionsTabs";
 import { MarketsGrid } from "@/components/MarketsGrid";
 import { CTASection } from "@/components/CTASection";
 import { SectionHeading } from "@/components/SectionHeading";
+import { useLanguage } from "@/i18n/LanguageProvider";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -23,6 +24,7 @@ export const Route = createFileRoute("/")({
 });
 
 function HomePage() {
+  const { t } = useLanguage();
   return (
     <>
       <HeroArc />
@@ -31,9 +33,9 @@ function HomePage() {
       <section className="bg-secondary py-28 md:py-36">
         <div className="mx-auto max-w-7xl px-6 lg:px-10">
           <SectionHeading
-            eyebrow="Solutions"
-            title={<>Technical excellence for <span className="text-primary/70">demanding environments</span></>}
-            description="Suporte técnico para projetos complexos de infraestrutura crítica. Da especificação ao comissionamento, garantimos zero-failure outcome para Plataformas Offshore, Data Centers e Subestações."
+            eyebrow={t("solutions.eyebrow")}
+            title={<>{t("solutions.title.prefix")} <span className="text-primary/70">{t("solutions.title.highlight")}</span></>}
+            description={t("solutions.description")}
           />
           <div className="mt-12">
             <SolutionsTabs />
@@ -44,8 +46,8 @@ function HomePage() {
       <section className="bg-background py-28 md:py-36">
         <div className="mx-auto max-w-7xl px-6 lg:px-10">
           <SectionHeading
-            eyebrow="Markets"
-            title="Sectors where operational continuity is essential"
+            eyebrow={t("markets.eyebrow")}
+            title={t("markets.title")}
           />
           <div className="mt-12">
             <MarketsGrid />

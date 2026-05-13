@@ -24,70 +24,68 @@ import pipe1 from "@/assets/pipe-1.png";
 import pipe2 from "@/assets/pipe-2.png";
 import pipe3 from "@/assets/pipe-3.png";
 import pipe4 from "@/assets/pipe-4.png";
+import { useLanguage } from "@/i18n/LanguageProvider";
+import type { TranslationKey } from "@/i18n/translations";
 
 interface Solution {
   id: string;
-  title: string;
-  intro: string;
-  bullets: { label: string; text: string }[];
+  titleKey: TranslationKey;
+  introKey: TranslationKey;
+  bullets: { labelKey: TranslationKey; textKey: TranslationKey }[];
   images: string[];
 }
 
 const solutions: Solution[] = [
   {
     id: "electrical",
-    title: "Electrical Connectivity",
-    intro:
-      "Solutions for cable connection, fixation, and protection in critical environments.",
+    titleKey: "sol.electrical.title",
+    introKey: "sol.electrical.intro",
     bullets: [
-      { label: "Cable Glands", text: "For industrial and hazardous (Ex) areas, with international certifications." },
-      { label: "Cable Cleats", text: "Designed and tested in accordance with IEC 61914:2009." },
-      { label: "Accessories and Adaptors", text: "Complete range for cable management and infrastructure." },
+      { labelKey: "sol.electrical.b1.l", textKey: "sol.electrical.b1.t" },
+      { labelKey: "sol.electrical.b2.l", textKey: "sol.electrical.b2.t" },
+      { labelKey: "sol.electrical.b3.l", textKey: "sol.electrical.b3.t" },
     ],
     images: [electricalGland1, electricalCleat, electricalAccessories, electricalGland2],
   },
   {
     id: "sealing",
-    title: "Sealing Solutions",
-    intro:
-      "Multi Cable Transit Solutions developed to ensure reliable and secure sealing of cable and pipe penetrations in critical environments.",
+    titleKey: "sol.sealing.title",
+    introKey: "sol.sealing.intro",
     bullets: [
-      { label: "Modular systems", text: "Designed to protect against the ingress of dust, water, fire, and other environmental agents." },
-      { label: "High level of safety and protection", text: "With a wide range of solutions adaptable to different applications." },
-      { label: "Ease and practicality in installation", text: "And maintenance, reducing intervention time and operational costs." },
+      { labelKey: "sol.sealing.b1.l", textKey: "sol.sealing.b1.t" },
+      { labelKey: "sol.sealing.b2.l", textKey: "sol.sealing.b2.t" },
+      { labelKey: "sol.sealing.b3.l", textKey: "sol.sealing.b3.t" },
     ],
     images: [mctWallmax, mctCircular, mctModulo, selagemBeele],
   },
   {
     id: "watertight",
-    title: "Watertight Sealing Solutions",
-    intro:
-      "Sealing solutions for building penetrations, such as core drillings, ensuring watertight and gas-tight performance.",
+    titleKey: "sol.watertight.title",
+    introKey: "sol.watertight.intro",
     bullets: [
-      { label: "Split solutions", text: "For cables or pipes already installed, allowing easy assembly even after installation is completed." },
-      { label: "Versatile system", text: "That enables sealing of a wide range of cable and pipe configurations." },
+      { labelKey: "sol.watertight.b1.l", textKey: "sol.watertight.b1.t" },
+      { labelKey: "sol.watertight.b2.l", textKey: "sol.watertight.b2.t" },
     ],
     images: [watertight1, watertight2, watertight3, watertight3],
   },
   {
     id: "beele",
-    title: "Beele Sealing Technologies",
-    intro:
-      "Whether in shipbuilding, offshore, industrial installations, or construction, Beele's first-class products and systems ensure optimum fire safety and watertight integrity.\n\nFrom fire-resistant sealing to gas-, smoke-, and watertight solutions for cable and pipe penetrations, as well as coating and insulation, Beele offers reliable solutions without metal components or mineral insulation — eliminating risks of corrosion in certain environments and preventing performance degradation over time.",
+    titleKey: "sol.beele.title",
+    introKey: "sol.beele.intro",
     bullets: [
-      { label: "Cable Transits / Pipe Penetrations", text: "Fire-resistant, gas-, smoke- and watertight sealing for cable and pipe penetrations." },
-      { label: "Gaskets Insulation / Coating", text: "Reliable coating and insulation without metal components or mineral insulation." },
+      { labelKey: "sol.beele.b1.l", textKey: "sol.beele.b1.t" },
+      { labelKey: "sol.beele.b2.l", textKey: "sol.beele.b2.t" },
     ],
     images: [beele1, beele2, beele3, beele4],
   },
   {
     id: "pipe",
-    title: "Pipe Support Technology",
-    intro: "Comprehensive range of Pipe Support Solutions.",
+    titleKey: "sol.pipe.title",
+    introKey: "sol.pipe.intro",
     bullets: [
-      { label: "Spring supports", text: "Snubbers, cold (cryogenic)/hot shoes." },
-      { label: "Ancillary equipment", text: "Rods and connectors, pipe attachments, beam attachments." },
-      { label: "PTFE", text: "Slide bearings and isolation products." },
+      { labelKey: "sol.pipe.b1.l", textKey: "sol.pipe.b1.t" },
+      { labelKey: "sol.pipe.b2.l", textKey: "sol.pipe.b2.t" },
+      { labelKey: "sol.pipe.b3.l", textKey: "sol.pipe.b3.t" },
     ],
     images: [pipe1, pipe2, pipe3, pipe4],
   },
@@ -96,6 +94,8 @@ const solutions: Solution[] = [
 export function SolutionsTabs() {
   const [active, setActive] = useState(solutions[0].id);
   const sol = solutions.find((s) => s.id === active)!;
+  const { t } = useLanguage();
+  const title = t(sol.titleKey);
 
   return (
     <div>
@@ -112,7 +112,7 @@ export function SolutionsTabs() {
                   : "bg-white text-primary/70 hover:text-primary hover:shadow-soft"
               }`}
             >
-              {s.title}
+              {t(s.titleKey)}
             </button>
           );
         })}
@@ -128,15 +128,15 @@ export function SolutionsTabs() {
           className="mt-6 grid gap-1 overflow-hidden rounded-2xl bg-card shadow-soft md:grid-cols-2"
         >
           <div className="bg-deep p-8 text-white md:p-12">
-            <h3 className="text-3xl font-medium text-cyan md:text-4xl">{sol.title}</h3>
+            <h3 className="text-3xl font-medium text-cyan md:text-4xl">{title}</h3>
             <p className="mt-6 whitespace-pre-line text-sm leading-relaxed text-white/75 md:text-base">
-              {sol.intro}
+              {t(sol.introKey)}
             </p>
             <ul className="mt-10 space-y-5">
               {sol.bullets.map((b) => (
-                <li key={b.label}>
-                  <p className="text-sm font-semibold text-white">{b.label}</p>
-                  <p className="mt-1 text-sm text-white/65">{b.text}</p>
+                <li key={b.labelKey}>
+                  <p className="text-sm font-semibold text-white">{t(b.labelKey)}</p>
+                  <p className="mt-1 text-sm text-white/65">{t(b.textKey)}</p>
                 </li>
               ))}
             </ul>
@@ -146,7 +146,7 @@ export function SolutionsTabs() {
               <div key={i} className="overflow-hidden bg-white">
                 <img
                   src={src}
-                  alt={`${sol.title} ${i + 1}`}
+                  alt={`${title} ${i + 1}`}
                   loading="lazy"
                   className="h-full w-full object-cover transition-transform duration-700 hover:scale-105"
                 />
