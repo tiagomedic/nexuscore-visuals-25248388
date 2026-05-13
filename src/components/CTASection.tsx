@@ -1,7 +1,9 @@
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
+import { useLanguage } from "@/i18n/LanguageProvider";
 
 export function CTASection() {
   const ref = useScrollReveal<HTMLElement>({ selector: "[data-reveal]", y: 40, stagger: 0.2 });
+  const { t } = useLanguage();
   return (
     <section ref={ref} className="relative overflow-hidden bg-cta py-28 text-white">
       <svg
@@ -19,16 +21,16 @@ export function CTASection() {
       </svg>
       <div className="relative mx-auto max-w-5xl px-6 text-center lg:px-10">
         <p data-reveal className="text-3xl font-light leading-snug md:text-5xl">
-          We don't sell <span className="font-serif-italic text-cyan">products</span>.
+          {t("cta.line1.prefix")} <span className="font-serif-italic text-cyan">{t("cta.line1.italic")}</span>{t("cta.line1.suffix")}
           <br />
-          We ensure critical operations never stop.
+          {t("cta.line2")}
         </p>
         <a
           data-reveal
           href="mailto:adriano@nexcorebrasil.com"
           className="mt-12 inline-flex items-center gap-2 rounded-full bg-white px-8 py-4 text-sm font-semibold uppercase tracking-[0.22em] text-primary shadow-glow transition-all hover:-translate-y-0.5"
         >
-          Get in touch →
+          {t("cta.button")}
         </a>
       </div>
     </section>
