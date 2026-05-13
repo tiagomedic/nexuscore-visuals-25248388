@@ -1,5 +1,4 @@
 import { Database, Zap, Droplets, Factory, Cog } from "lucide-react";
-import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 import oilGas from "@/assets/mercado-oil-gas.jpg";
 import dataCenter from "@/assets/mercado-data-center.jpg";
 import industrial from "@/assets/mercado-industrial.jpg";
@@ -17,10 +16,9 @@ const markets: { icon: typeof Database; titleKey: TranslationKey; descKey: Trans
 ];
 
 export function MarketsGrid() {
-  const ref = useScrollReveal<HTMLDivElement>({ selector: "article", y: 60, stagger: 0.15 });
   const { t } = useLanguage();
   return (
-    <div ref={ref} className="grid gap-5 md:grid-cols-2 lg:grid-cols-6">
+    <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-6">
       {markets.map((m, i) => {
         const Icon = m.icon;
         const wide = i < 2;
