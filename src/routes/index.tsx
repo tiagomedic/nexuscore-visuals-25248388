@@ -81,6 +81,14 @@ function HomePage() {
             title={<>{t("partnersPage.title.prefix")} <em className="font-serif-italic text-primary/70">{t("partnersPage.title.italic")}</em></>}
             description={t("partnersPage.description")}
           />
+          <div className="mt-8 text-center">
+            <Link
+              to="/parceiros"
+              className="inline-flex items-center gap-2 text-[11px] font-medium uppercase tracking-[0.22em] text-primary hover:text-primary/70"
+            >
+              {t("nav.partners")} →
+            </Link>
+          </div>
           <div className="mt-14 grid grid-cols-2 items-center gap-8 md:grid-cols-3 lg:grid-cols-5 lg:gap-12">
             {homePartners.map((p) => (
               <div key={p.name} className="flex items-center justify-center">
@@ -92,14 +100,6 @@ function HomePage() {
                 />
               </div>
             ))}
-          </div>
-          <div className="mt-12 text-center">
-            <Link
-              to="/parceiros"
-              className="inline-flex items-center gap-2 text-[11px] font-medium uppercase tracking-[0.22em] text-primary hover:text-primary/70"
-            >
-              {t("nav.partners")} →
-            </Link>
           </div>
         </div>
       </section>
