@@ -54,6 +54,12 @@ export function Footer() {
                 </a>
               </li>
               <li className="flex items-start gap-3">
+                <Mail size={15} className="mt-0.5 text-cyan" />
+                <a href="mailto:sac@nexcorebrasil.com" className="hover:text-white">
+                  sac@nexcorebrasil.com
+                </a>
+              </li>
+              <li className="flex items-start gap-3">
                 <MapPin size={15} className="mt-0.5 text-cyan" />
                 <span>{t("footer.location")}</span>
               </li>
