@@ -35,21 +35,33 @@ export function useScrollReveal<T extends HTMLElement = HTMLElement>(opts: Optio
     if (!targets.length) return;
 
     const ctx = gsap.context(() => {
-      gsap.from(targets, {
-        y,
-        opacity,
+      gsap.set(targets, { y, opacity, willChange: "transform, opacity" });
+      gsap.to(targets, {
+        y: 0,
+        opacity: 1,
         duration,
         stagger,
         ease: "power3.out",
+        immediateRender: false,
         scrollTrigger: {
           trigger: el,
           start,
           toggleActions: once ? "play none none none" : "play none none reverse",
+          invalidateOnRefresh: true,
         },
       });
     }, el);
 
-    return () => ctx.revert();
+    // Refresh after images load to recompute trigger positions
+    const onLoad = () => ScrollTrigger.refresh();
+    window.addEventListener("load", onLoad);
+    const t = setTimeout(() => ScrollTrigger.refresh(), 300);
+
+    return () => {
+      window.removeEventListener("load", onLoad);
+      clearTimeout(t);
+      ctx.revert();
+    };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
