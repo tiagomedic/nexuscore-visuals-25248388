@@ -25,7 +25,7 @@ export function Footer() {
               <li><Link to="/solucoes" className="hover:text-white">{t("footer.nav.solutions")}</Link></li>
               <li><Link to="/mercados" className="hover:text-white">{t("footer.nav.markets")}</Link></li>
               <li><Link to="/parceiros" className="hover:text-white">{t("footer.nav.partners")}</Link></li>
-              <li><a href="mailto:comercial@nexcorebrasil.com" className="hover:text-white">{t("footer.nav.contact")}</a></li>
+              <li><a href="mailto:comercial@nexcore.com" className="hover:text-white">{t("footer.nav.contact")}</a></li>
             </ul>
           </div>
 
@@ -49,8 +49,8 @@ export function Footer() {
             <ul className="mt-5 space-y-3 text-sm text-white/70">
               <li className="flex items-start gap-3">
                 <Mail size={15} className="mt-0.5 text-cyan" />
-                <a href="mailto:comercial@nexcorebrasil.com" className="hover:text-white">
-                  comercial@nexcorebrasil.com
+                <a href="mailto:comercial@nexcore.com" className="hover:text-white">
+                  comercial@nexcore.com
                 </a>
               </li>
               <li className="flex items-start gap-3">
