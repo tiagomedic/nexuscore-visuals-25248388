@@ -1,10 +1,36 @@
 import { motion } from "framer-motion";
+import { useEffect, useRef } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ArrowDown } from "lucide-react";
 import ShaderBackground from "./ui/shader-background";
 
+gsap.registerPlugin(ScrollTrigger);
+
 export function HeroArc() {
+  const sectionRef = useRef<HTMLElement | null>(null);
+
+  useEffect(() => {
+    const el = sectionRef.current;
+    if (!el) return;
+    const ctx = gsap.context(() => {
+      gsap.to("[data-hero-parallax]", {
+        yPercent: -25,
+        opacity: 0.2,
+        ease: "none",
+        scrollTrigger: {
+          trigger: el,
+          start: "top top",
+          end: "bottom top",
+          scrub: true,
+        },
+      });
+    }, el);
+    return () => ctx.revert();
+  }, []);
+
   return (
-    <section className="relative isolate flex min-h-screen items-end overflow-hidden bg-deep text-deep-foreground">
+    <section ref={sectionRef} className="relative isolate flex min-h-screen items-end overflow-hidden bg-deep text-deep-foreground">
       {/* Animated WebGL shader background */}
       <ShaderBackground className="absolute inset-0 -z-20 h-full w-full opacity-40" />
       <div className="absolute inset-0 -z-10 bg-deep/70" />
@@ -33,7 +59,7 @@ export function HeroArc() {
         />
       </svg>
 
-      <div className="relative mx-auto w-full max-w-7xl px-6 pb-20 pt-40 lg:px-10">
+      <div data-hero-parallax className="relative mx-auto w-full max-w-7xl px-6 pb-20 pt-40 lg:px-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
