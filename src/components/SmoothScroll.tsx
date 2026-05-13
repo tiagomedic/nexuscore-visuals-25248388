@@ -7,6 +7,12 @@ gsap.registerPlugin(ScrollTrigger);
 
 export function SmoothScroll() {
   useEffect(() => {
+    // Skip Lenis on touch/mobile — native scroll is smoother and far cheaper.
+    const isTouch =
+      typeof window !== "undefined" &&
+      (window.matchMedia("(pointer: coarse)").matches || window.innerWidth < 1024);
+    if (isTouch) return;
+
     const lenis = new Lenis({
       lerp: 0.1,
       smoothWheel: true,
