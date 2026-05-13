@@ -13,7 +13,7 @@ export const Route = createFileRoute("/contato")({
       {
         name: "description",
         content:
-          "Fale com a Nexcore Brasil. Suporte técnico para Data Centers, Energia, Óleo & Gás e projetos EPC. comercial@nexcorebrasil.com.br",
+          "Fale com a Nexcore Brasil. Suporte técnico para Data Centers, Energia, Óleo & Gás e projetos EPC. comercial@nexcorebrasil.com",
       },
       { property: "og:title", content: "Contato — Nexcore Brasil" },
       { property: "og:description", content: "Nossa equipe técnica pronta para apoiar seu projeto." },
@@ -91,8 +91,8 @@ function ContactPage() {
                 </span>
                 <div>
                   <p className="font-semibold text-primary">{t("contactPage.email")}</p>
-                  <a href="mailto:comercial@nexcorebrasil.com.br" className="text-muted-foreground hover:text-primary">
-                    comercial@nexcorebrasil.com.br
+                  <a href="mailto:comercial@nexcorebrasil.com" className="text-muted-foreground hover:text-primary">
+                    comercial@nexcorebrasil.com
                   </a>
                 </div>
               </li>
