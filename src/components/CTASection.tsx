@@ -27,7 +27,7 @@ export function CTASection() {
         </p>
         <a
           data-reveal
-          href="mailto:adriano@nexcorebrasil.com"
+          href="mailto:comercial@nexcorebrasil.com.br"
           className="mt-12 inline-flex items-center gap-2 rounded-full bg-white px-8 py-4 text-sm font-semibold uppercase tracking-[0.22em] text-primary shadow-glow transition-all hover:-translate-y-0.5"
         >
           {t("cta.button")}
