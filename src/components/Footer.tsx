@@ -54,17 +54,6 @@ export function Footer() {
                 </a>
               </li>
               <li className="flex items-start gap-3">
-                <Phone size={15} className="mt-0.5 text-cyan" />
-                <a
-                  href="https://api.whatsapp.com/send/?phone=5521988506014"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:text-white"
-                >
-                  +55 (21) 98850-6014
-                </a>
-              </li>
-              <li className="flex items-start gap-3">
                 <MapPin size={15} className="mt-0.5 text-cyan" />
                 <span>{t("footer.location")}</span>
               </li>
