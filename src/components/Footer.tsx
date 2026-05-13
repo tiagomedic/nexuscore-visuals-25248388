@@ -1,8 +1,10 @@
 import { Link } from "@tanstack/react-router";
 import { Mail, Phone, MapPin } from "lucide-react";
 import { Logo } from "./Logo";
+import { useLanguage } from "@/i18n/LanguageProvider";
 
 export function Footer() {
+  const { t } = useLanguage();
   return (
     <footer className="relative overflow-hidden bg-deep text-deep-foreground">
       <div className="mx-auto max-w-7xl px-6 pt-20 pb-10 lg:px-10">
@@ -10,40 +12,39 @@ export function Footer() {
           <div>
             <Logo variant="light" showTagline />
             <p className="mt-6 max-w-sm text-sm leading-relaxed text-white/65">
-              Soluções integradas de engenharia para infraestrutura crítica:
-              Data Centers, Energia, Óleo &amp; Gás e projetos EPC no Brasil e no exterior.
+              {t("footer.tagline")}
             </p>
           </div>
 
           <div>
             <h4 className="text-[11px] font-semibold uppercase tracking-[0.25em] text-cyan">
-              Navegação
+              {t("footer.nav")}
             </h4>
             <ul className="mt-5 space-y-3 text-sm text-white/70">
-              <li><Link to="/sobre" className="hover:text-white">Sobre a Nexcore</Link></li>
-              <li><Link to="/solucoes" className="hover:text-white">Soluções</Link></li>
-              <li><Link to="/mercados" className="hover:text-white">Mercados</Link></li>
-              <li><Link to="/parceiros" className="hover:text-white">Parceiros</Link></li>
-              <li><Link to="/contato" className="hover:text-white">Fale conosco</Link></li>
+              <li><Link to="/sobre" className="hover:text-white">{t("footer.nav.about")}</Link></li>
+              <li><Link to="/solucoes" className="hover:text-white">{t("footer.nav.solutions")}</Link></li>
+              <li><Link to="/mercados" className="hover:text-white">{t("footer.nav.markets")}</Link></li>
+              <li><Link to="/parceiros" className="hover:text-white">{t("footer.nav.partners")}</Link></li>
+              <li><Link to="/contato" className="hover:text-white">{t("footer.nav.contact")}</Link></li>
             </ul>
           </div>
 
           <div>
             <h4 className="text-[11px] font-semibold uppercase tracking-[0.25em] text-cyan">
-              Soluções
+              {t("footer.solutions")}
             </h4>
             <ul className="mt-5 space-y-3 text-sm text-white/70">
-              <li>Electrical Connectivity</li>
-              <li>Sealing Solutions</li>
-              <li>Watertight Sealing</li>
-              <li>Beele Sealing Technologies</li>
-              <li>Pipe Support Technology</li>
+              <li>{t("sol.electrical.title")}</li>
+              <li>{t("sol.sealing.title")}</li>
+              <li>{t("sol.watertight.title")}</li>
+              <li>{t("sol.beele.title")}</li>
+              <li>{t("sol.pipe.title")}</li>
             </ul>
           </div>
 
           <div>
             <h4 className="text-[11px] font-semibold uppercase tracking-[0.25em] text-cyan">
-              Contato
+              {t("footer.contact")}
             </h4>
             <ul className="mt-5 space-y-3 text-sm text-white/70">
               <li className="flex items-start gap-3">
@@ -65,7 +66,7 @@ export function Footer() {
               </li>
               <li className="flex items-start gap-3">
                 <MapPin size={15} className="mt-0.5 text-cyan" />
-                <span>Brasil — International Projects</span>
+                <span>{t("footer.location")}</span>
               </li>
             </ul>
           </div>
@@ -80,8 +81,8 @@ export function Footer() {
         </div>
 
         <div className="mt-10 flex flex-col items-start justify-between gap-3 border-t border-white/10 pt-6 text-xs text-white/50 sm:flex-row sm:items-center">
-          <p>© {new Date().getFullYear()} Nexcore Brasil · Integrated Solutions</p>
-          <p>Powering what cannot fail.</p>
+          <p>© {new Date().getFullYear()} Nexcore Brasil · {t("footer.copyright")}</p>
+          <p>{t("footer.slogan")}</p>
         </div>
       </div>
     </footer>
