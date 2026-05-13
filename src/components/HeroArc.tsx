@@ -3,8 +3,9 @@ import { lazy, Suspense, useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ArrowDown } from "lucide-react";
-const ShaderBackground = lazy(() => import("./ui/shader-background"));
 import { useLanguage } from "@/i18n/LanguageProvider";
+
+const ShaderBackground = lazy(() => import("./ui/shader-background"));
 
 gsap.registerPlugin(ScrollTrigger);
 
