@@ -83,8 +83,13 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:site_name", content: "Nexcore Brasil" },
       { property: "og:title", content: "Nexcore Brasil — Powering what cannot fail" },
       { property: "og:description", content: "Soluções integradas para Data Centers, Energia e Óleo & Gás." },
+      { property: "og:image", content: "https://www.nexcorebrasil.com/og-image.jpg" },
+      { property: "og:image:width", content: "1200" },
+      { property: "og:image:height", content: "630" },
+      { property: "og:url", content: "https://www.nexcorebrasil.com" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: "Nexcore Brasil — Powering what cannot fail" },
+      { name: "twitter:image", content: "https://www.nexcorebrasil.com/og-image.jpg" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
